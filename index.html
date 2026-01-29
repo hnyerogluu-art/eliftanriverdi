@@ -75,32 +75,34 @@
 
       <div class="grid">
         <div class="card">
-          <h2 style="margin:0 0 10px;">Bizim Sayaç</h2>
+          <h2 style="margin:0 0 10px;">Hayatımın anlamlı olduğu süre</h2>
           <div class="kpi" id="kpi">
             <div class="pill">⏳ <b id="days">0</b> gün</div>
-            <div class="pill">🕒 <b id="hours">0</b> saat</div>
-            <div class="pill">✨ <b id="mins">0</b> dk</div>
+<div class="pill">🕒 <b id="hours">0</b> saat</div>
+<div class="pill">✨ <b id="mins">0</b> dk</div>
+
           </div>
 
         
           <div class="btns">
-            <button id="random">Rastgele Tatlı Söz</button>
+            <button id="random">Fıstığım</button>
             <button id="confetti">Minik Kutlama</button>
           </div>
           <p class="small" id="quote" style="margin:10px 0 0;"></p>
         </div>
 
         <div class="card">
-          <h2 style="margin:0 0 10px;">Elif’e Mektup</h2>
+          <h2 style="margin:0 0 10px;">Elif Seni çok seviyorum</h2>
           <p class="letter" id="letter">
 Elif,
 
-Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen olunca her şey daha güzel benim biricik sevgilim.
+Hayatıma girdiğin günden beri her saniyem daha güzel ve daha anlamlı. Hayat bazen çok yorucu ve saçma ama hayatımda sen varken saçma olan şeyler bile anlamlı geliyor. Seni görene kadar minimalist olduğumu
+            düşünüyordum aşkım meğerse seni tanıyınca anladım ki evrendeki en değerli şeye ihtiyacım varmış ve ben ona 25/09/25 den beri sahibim.
 
 İyi ki varsın. İyi ki benimlesin.
           </p>
           <p class="small" style="margin:12px 0 0;">
-            Not: Bu metni istediğin gibi değiştir — ben daha “nokta atışı” bir mektup da yazarım.
+        
           </p>
         </div>
       </div>
@@ -110,91 +112,63 @@ Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen 
   </div>
 
   <script>
-    // --- Date handling ---
+  // SABİT TARİH: 25 EYLÜL 2025 00:00
+  const startDate = new Date("2025-09-25T00:00:00");
 
-      const s = str.trim();
-      if(!s) return null;
-      const parts = s.split(" ");
-      const d = parts[0];
-      const t = parts[1] || "00:00";
-      const iso = d + "T" + t + ":00";
-      const dt = new Date(iso);
-      return isNaN(dt.getTime()) ? null : dt;
-    }
+  // Sayaç elementleri (HTML'de bu id'ler olmalı)
+  const elDays = document.getElementById("days");
+  const elHours = document.getElementById("hours");
+  const elMins = document.getElementById("mins");
 
-    function loadStart(){
-      const saved = localStorage.getItem("startDate");
-      if(saved){
-        dateInput.value = saved;
-        const dt = parseDate(saved);
-        if(dt) return dt;
-      }
-      // default: today at 00:00
-      const now = new Date();
-      return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
-    }
+  function tick(){
+    const now = new Date();
 
-    // SABİT BAŞLANGIÇ TARİHİ: 25 EYLÜL 2025 00:00
-let startDate = new Date("2025-09-25T00:00:00");
+    // 25 Eylül 2025 ile bugünün farkı (mutlak)
+    let diff = Math.abs(now - startDate);
 
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hoursTotal = Math.floor(minutes / 60);
+    const days = Math.floor(hoursTotal / 24);
 
+    const hours = hoursTotal % 24;
+    const mins = minutes % 60;
 
-      const dt = parseDate(dateInput.value);
-      if(!dt){
-        alert("Tarih formatı olmamış 😄 Örn: 2025-01-01 20:30");
-        return;
-      }
-      startDate = dt;
-      localStorage.setItem("startDate", dateInput.value.trim());
-    });
+    // Eğer HTML'de sayaç id'leri yoksa patlamasın diye kontrol
+    if (elDays) elDays.textContent = days;
+    if (elHours) elHours.textContent = hours;
+    if (elMins) elMins.textContent = mins;
+  }
 
-    // --- Counter ---
-    const elDays = document.getElementById("days");
-    const elHours = document.getElementById("hours");
-    const elMins = document.getElementById("mins");
+  tick();
+  setInterval(tick, 1000);
 
-function tick(){
-  const now = new Date();
+  // --- Quotes ---
+  const quotes = [
+    "Gözlerin gözlerime değmediği bir an olmasın",
+    "Herkese aynı bana farklı davranmana bayılıyorum",
+     "Sinirliyken bana kızmana bayılıyorum",
+     "Trip atıp nazlanan sevgilim seni çok seviyorum",
+    "Güldüğünde parlayan gözlerin için canımı veririm",
+    "Dudaklarını seviyorum çünkü gülüşünle her şeyi düzeltiyorsun.",
+    "Yanımda olmasan bile aklımda hep varsın."
+  ];
 
-  // 25 Eylül 2025 ile bugünün farkı (mutlak)
-  let diff = Math.abs(now - startDate);
+  const quoteEl = document.getElementById("quote");
+  const randomBtn = document.getElementById("random");
+  const confettiBtn = document.getElementById("confetti");
 
-  const seconds = Math.floor(diff / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hoursTotal = Math.floor(minutes / 60);
-  const days = Math.floor(hoursTotal / 24);
+  if (quoteEl) quoteEl.textContent = "💬 " + quotes[0];
 
-  const hours = hoursTotal % 24;
-  const mins = minutes % 60;
-  const secs = seconds % 60;
-
-  elDays.textContent = days;
-  elHours.textContent = hours;
-  elMins.textContent = mins;
-
-  // saniyeyi de göstermek istersen:
-  // ekrana eklemek için HTML'e bir pill daha koyabiliriz
-}
-
-    tick();
-    setInterval(tick, 1000);
-
-    // --- Quotes ---
-    const quotes = [
-      "Sen olunca, en sıradan gün bile güzel.",
-      "İyi ki sen. İyi ki biz.",
-      "Gülüşün: benim favori manzaram.",
-      "Kalbim ‘sen’ diye bildirim atıyor.",
-      "Yanımda olmasan bile aklımda hep varsın."
-    ];
-    const quoteEl = document.getElementById("quote");
-    document.getElementById("random").addEventListener("click", () => {
+  if (randomBtn && quoteEl){
+    randomBtn.addEventListener("click", () => {
       const q = quotes[Math.floor(Math.random() * quotes.length)];
       quoteEl.textContent = "💬 " + q;
     });
+  }
 
-    // --- Tiny confetti ---
-    document.getElementById("confetti").addEventListener("click", () => {
+  if (confettiBtn){
+    confettiBtn.addEventListener("click", () => {
       for(let i=0;i<24;i++){
         const s = document.createElement("span");
         s.textContent = ["✨","💖","🎉","💫"][Math.floor(Math.random()*4)];
@@ -211,10 +185,9 @@ function tick(){
         setTimeout(()=> s.remove(), 1300);
       }
     });
+  }
+</script>
 
-    // show first quote
-    quoteEl.textContent = "💬 " + quotes[0];
-  </script>
 </body>
 </html>
 
