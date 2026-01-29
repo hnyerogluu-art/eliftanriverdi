@@ -7,6 +7,19 @@
   <meta name="description" content="Elif için küçük bir sürpriz." />
   <style>
     /* === HORIZONTAL PHOTO SCROLLER === */
+    html, body{
+  overflow-x: hidden;
+}
+
+.card{
+  overflow: hidden; /* galeri taşmasını kart içinde tut */
+}
+
+.gallery{
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .gallery{
   display: flex;
   gap: 12px;
@@ -127,12 +140,12 @@
     <img src="02.JPG" alt="Photo 02">
     <img src="03.JPG" alt="Photo 03">
     <img src="04.JPG" alt="Photo 04">
-    <img src="05.jpeg" alt="Photo 05">
-    <img src="06.jpeg" alt="Photo 06">
-    <img src="07.jpeg" alt="Photo 07">
-    <img src="08.jpeg" alt="Photo 08">
-    <img src="09.jpeg" alt="Photo 09">
-    <img src="10.jpeg" alt="Photo 10">
+    <img src="05.JPG" alt="Photo 05">
+    <img src="06.JPG" alt="Photo 06">
+    <img src="07.JPG" alt="Photo 07">
+    <img src="08.JPG" alt="Photo 08">
+    <img src="09.JPG" alt="Photo 09">
+    <img src="10.JPG" alt="Photo 10">
   </div>
 </div>
 
@@ -239,11 +252,13 @@ Hayatıma girdiğin günden beri her saniyem daha güzel ve daha anlamlı. Hayat
     });
   }
 </script>
+
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <img id="lightboxImg" alt="Preview">
-  <div class="hint">Kapatmak için tıkla / ESC</div>
+  <div class="hint">Kapatmak için tıkla AŞKIIIM/ ESC</div>
 </div>
 
 </body>
 </html>
+
 
