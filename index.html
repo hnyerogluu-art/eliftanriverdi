@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <div style="margin-bottom:12px;">
-  <a href="quiz.html" class="chip">😄 Elif mi Yağız mı? Quiz</a>
-</div>
+  
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -224,14 +222,22 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
-  <a class="brand" href="index.html">💘 Elif</a>
-  <div class="links">
-    <a href="index.html" class="active">Ana Sayfa</a>
-    <a href="game.html">Mini Oyun</a>
-    <a href="memories.html">Anılar</a>
+ <div class="tabs">
+  <a class="chip active" href="index.html">💘 Elif</a>
+
+  <a class="chip" href="#anasayfa">Ana Sayfa</a>
+
+  <div class="chip dropdown">
+    <button class="chipBtn" id="miniBtn">Mini Oyun ▾</button>
+    <div class="menu" id="miniMenu">
+      <a href="game.html">🎮 Mini Oyun</a>
+      <a href="quiz.html">😄 Elif mi Yağız mı?</a>
+    </div>
   </div>
-</nav>
+
+  <a class="chip" href="#anilar">Anılar</a>
+</div>
+
 
   <div class="bg-collage" id="bgCollage"></div>
 <div class="bg-overlay"></div>
