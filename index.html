@@ -6,6 +6,38 @@
   <title>Elif ❤️ Yağız</title>
   <meta name="description" content="Elif için küçük bir sürpriz." />
   <style>
+    .lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none;                 /* NORMALDE GİZLİ */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox.open{
+  display: flex;                 /* SADECE AÇIKKEN GÖRÜNÜR */
+}
+
+.lightbox img{
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.lightbox .hint{
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  opacity: .7;
+  color: #fff;
+  pointer-events: none;
+}
+
     /* === HORIZONTAL PHOTO SCROLLER === */
     html, body{
   overflow-x: hidden;
