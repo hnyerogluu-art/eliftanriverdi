@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elif ❤️ Yağız</title>
+  <meta name="description" content="Elif için küçük bir sürpriz." />
+  <style>
+    :root { --card: rgba(255,255,255,.08); --border: rgba(255,255,255,.18); }
+    * { box-sizing: border-box; }
+    body{
+      margin:0; min-height:100vh; color:#fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(255, 105, 180,.35), transparent 60%),
+                  radial-gradient(1200px 800px at 80% 30%, rgba(135, 206, 250,.30), transparent 60%),
+                  linear-gradient(180deg, #0b0b12, #0b0b12);
+      display:flex; align-items:center; justify-content:center; padding:28px;
+    }
+    .wrap{ width:min(980px, 100%); }
+    .hero{
+      border:1px solid var(--border); background:var(--card);
+      border-radius:24px; padding:28px; backdrop-filter: blur(10px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .top{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    .badge{
+      width:56px; height:56px; border-radius:18px;
+      border:1px solid var(--border); background:rgba(255,255,255,.06);
+      display:grid; place-items:center; font-size:28px;
+    }
+    h1{ margin:0; font-size: clamp(26px, 4vw, 44px); letter-spacing:.2px; }
+    .sub{ margin:8px 0 0; opacity:.85; font-size: clamp(14px, 2vw, 16px); }
+    .grid{ margin-top:18px; display:grid; gap:14px; grid-template-columns: 1.2fr .8fr; }
+    @media (max-width: 820px){ .grid{ grid-template-columns: 1fr; } }
+    .card{
+      border:1px solid var(--border); background:rgba(255,255,255,.06);
+      border-radius:20px; padding:18px;
+    }
+    .kpi{ display:flex; gap:12px; flex-wrap:wrap; }
+    .pill{
+      border:1px solid var(--border); background:rgba(0,0,0,.22);
+      padding:10px 12px; border-radius:999px; font-size:14px;
+    }
+    .btns{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    button{
+      cursor:pointer; border:1px solid var(--border);
+      background:rgba(255,255,255,.08); color:#fff;
+      padding:10px 12px; border-radius:14px; font-weight:600;
+    }
+    button:hover{ background:rgba(255,255,255,.14); }
+    .small{ opacity:.75; font-size:13px; line-height:1.45; }
+    .letter{
+      font-size:16px; line-height:1.7; opacity:.92; margin:0;
+      white-space: pre-wrap;
+    }
+    .footer{ margin-top:14px; text-align:center; opacity:.65; font-size:12px; }
+    .inputRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    input{
+      border:1px solid var(--border); background:rgba(0,0,0,.22);
+      color:#fff; padding:10px 12px; border-radius:14px; outline:none;
+      flex:1; min-width:220px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="top">
+        <div class="badge">💘</div>
+        <div>
+          <h1>Elif Tanrıverdi</h1>
+          <p class="sub">Burası “küçük sürpriz” diye başladı… şu an resmen mini bir evren oldu.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2 style="margin:0 0 10px;">Bizim Sayaç</h2>
+          <div class="kpi" id="kpi">
+            <div class="pill">⏳ <b id="days">0</b> gün</div>
+            <div class="pill">🕒 <b id="hours">0</b> saat</div>
+            <div class="pill">✨ <b id="mins">0</b> dk</div>
+          </div>
+
+          <div class="inputRow">
+            <input id="date" placeholder="Tanışma tarihi: 2025-01-01 20:30" />
+            <button id="save">Kaydet</button>
+          </div>
+          <p class="small" style="margin-top:10px;">
+            İpucu: Tarihi “YYYY-AA-GG SS:DD” gibi yaz. Kaydedince sayaç otomatik çalışır.
+          </p>
+
+          <div class="btns">
+            <button id="random">Rastgele Tatlı Söz</button>
+            <button id="confetti">Minik Kutlama</button>
+          </div>
+          <p class="small" id="quote" style="margin:10px 0 0;"></p>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:0 0 10px;">Elif’e Mektup</h2>
+          <p class="letter" id="letter">
+Elif,
+
+Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen olunca her şey daha “tam”.
+
+İyi ki varsın. İyi ki benimlesin.
+          </p>
+          <p class="small" style="margin:12px 0 0;">
+            Not: Bu metni istediğin gibi değiştir — ben daha “nokta atışı” bir mektup da yazarım.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">Made with ❤️ by Yağız</div>
+    </div>
+  </div>
+
+  <script>
+    // --- Date handling ---
+    const dateInput = document.getElementById("date");
+    const saveBtn = document.getElementById("save");
+
+    function parseDate(str){
+      // Accept: "YYYY-MM-DD HH:MM" or "YYYY-MM-DD"
+      const s = str.trim();
+      if(!s) return null;
+      const parts = s.split(" ");
+      const d = parts[0];
+      const t = parts[1] || "00:00";
+      const iso = d + "T" + t + ":00";
+      const dt = new Date(iso);
+      return isNaN(dt.getTime()) ? null : dt;
+    }
+
+    function loadStart(){
+      const saved = localStorage.getItem("startDate");
+      if(saved){
+        dateInput.value = saved;
+        const dt = parseDate(saved);
+        if(dt) return dt;
+      }
+      // default: today at 00:00
+      const now = new Date();
+      return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+    }
+
+    let startDate = loadStart();
+
+    saveBtn.addEventListener("click", () => {
+      const dt = parseDate(dateInput.value);
+      if(!dt){
+        alert("Tarih formatı olmamış 😄 Örn: 2025-01-01 20:30");
+        return;
+      }
+      startDate = dt;
+      localStorage.setItem("startDate", dateInput.value.trim());
+    });
+
+    // --- Counter ---
+    const elDays = document.getElementById("days");
+    const elHours = document.getElementById("hours");
+    const elMins = document.getElementById("mins");
+
+    function tick(){
+      const now = new Date();
+      let diff = Math.max(0, now - startDate);
+      const mins = Math.floor(diff / 60000);
+      const days = Math.floor(mins / (60*24));
+      const hours = Math.floor((mins - days*60*24) / 60);
+      const minutes = mins % 60;
+
+      elDays.textContent = days;
+      elHours.textContent = hours;
+      elMins.textContent = minutes;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // --- Quotes ---
+    const quotes = [
+      "Sen olunca, en sıradan gün bile güzel.",
+      "İyi ki sen. İyi ki biz.",
+      "Gülüşün: benim favori manzaram.",
+      "Kalbim ‘sen’ diye bildirim atıyor.",
+      "Yanımda olmasan bile aklımda hep varsın."
+    ];
+    const quoteEl = document.getElementById("quote");
+    document.getElementById("random").addEventListener("click", () => {
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = "💬 " + q;
+    });
+
+    // --- Tiny confetti ---
+    document.getElementById("confetti").addEventListener("click", () => {
+      for(let i=0;i<24;i++){
+        const s = document.createElement("span");
+        s.textContent = ["✨","💖","🎉","💫"][Math.floor(Math.random()*4)];
+        s.style.position="fixed";
+        s.style.left = (Math.random()*100) + "vw";
+        s.style.top = "-10px";
+        s.style.fontSize = (14 + Math.random()*18) + "px";
+        s.style.transition="transform 1.2s linear, opacity 1.2s linear";
+        document.body.appendChild(s);
+        requestAnimationFrame(() => {
+          s.style.transform = `translateY(${110 + Math.random()*30}vh) rotate(${Math.random()*360}deg)`;
+          s.style.opacity = "0";
+        });
+        setTimeout(()=> s.remove(), 1300);
+      }
+    });
+
+    // show first quote
+    quoteEl.textContent = "💬 " + quotes[0];
+  </script>
+</body>
+</html>
