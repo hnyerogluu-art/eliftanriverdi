@@ -229,6 +229,15 @@
         <div class="card">
           <h2 style="margin:0 0 10px;">Elif Seni çok seviyorum</h2>
           <p class="letter" id="letter">
+            <div style="margin-top:12px;">
+  <audio id="song" src="song.mp3"></audio>
+  <button id="playBtn" class="chip">▶ Dinle</button>
+
+  <p id="songNote" style="opacity:0; margin-top:8px; transition:.4s;">
+    🎧 Bu şarkı çalınca aklıma <b>sen</b> geliyorsun.
+  </p>
+</div>
+
 Elif,
 
 Hayatıma girdiğin günden beri her saniyem daha güzel ve daha anlamlı. Hayat bazen çok yorucu ve saçma ama hayatımda sen varken saçma olan şeyler bile anlamlı geliyor. Seni görene kadar minimalist olduğumu düşünüyordum aşkım meğerse seni tanıyınca anladım ki evrendeki en değerli şeye ihtiyacım varmış ve ben ona 25/09/25 den beri sahibim.
@@ -341,6 +350,21 @@ if (bgCollage) {
     bgCollage.appendChild(tile);
   }
 }
+const song = document.getElementById("song");
+const playBtn = document.getElementById("playBtn");
+const note = document.getElementById("songNote");
+
+playBtn.addEventListener("click", () => {
+  if (song.paused) {
+    song.play();
+    playBtn.textContent = "⏸ Durdur";
+    note.style.opacity = "1";
+  } else {
+    song.pause();
+    playBtn.textContent = "▶ Dinle";
+    note.style.opacity = "0";
+  }
+});
 
 </script>
 
