@@ -69,7 +69,7 @@
         <div class="badge">💘</div>
         <div>
           <h1>Elif Tanrıverdi</h1>
-          <p class="sub">Burası “küçük sürpriz” diye başladı… şu an resmen mini bir evren oldu.</p>
+          <p class="sub">Seni tanımakla başladı aşık olmakla devam ediyor</p>
         </div>
       </div>
 
@@ -153,18 +153,29 @@ let startDate = new Date("2025-09-25T00:00:00");
     const elHours = document.getElementById("hours");
     const elMins = document.getElementById("mins");
 
-    function tick(){
-      const now = new Date();
-      let diff = Math.max(0, now - startDate);
-      const mins = Math.floor(diff / 60000);
-      const days = Math.floor(mins / (60*24));
-      const hours = Math.floor((mins - days*60*24) / 60);
-      const minutes = mins % 60;
+function tick(){
+  const now = new Date();
 
-      elDays.textContent = days;
-      elHours.textContent = hours;
-      elMins.textContent = minutes;
-    }
+  // 25 Eylül 2025 ile bugünün farkı (mutlak)
+  let diff = Math.abs(now - startDate);
+
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hoursTotal = Math.floor(minutes / 60);
+  const days = Math.floor(hoursTotal / 24);
+
+  const hours = hoursTotal % 24;
+  const mins = minutes % 60;
+  const secs = seconds % 60;
+
+  elDays.textContent = days;
+  elHours.textContent = hours;
+  elMins.textContent = mins;
+
+  // saniyeyi de göstermek istersen:
+  // ekrana eklemek için HTML'e bir pill daha koyabiliriz
+}
+
     tick();
     setInterval(tick, 1000);
 
