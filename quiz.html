@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elif mi Yağız mı? 😄</title>
+  <style>
+    body{margin:0; font-family:system-ui; background:#0b0b12; color:#fff;}
+    .wrap{max-width:980px; margin:0 auto; padding:18px;}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px; padding:12px 16px; margin-bottom:14px;
+      border-radius:18px; border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06); backdrop-filter: blur(10px);
+    }
+    .nav a{color:#fff; text-decoration:none; opacity:.85;}
+    .nav a:hover{opacity:1;}
+
+    .card{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(10px);
+      padding:16px;
+    }
+
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .pill{padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); opacity:.9;}
+    .q{
+      margin-top:12px;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+    }
+    .q h3{margin:0 0 10px;}
+    .btn{
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      padding:10px 14px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .btn:hover{transform: translateY(-1px);}
+    .btn:disabled{opacity:.5; cursor:not-allowed;}
+    .btnElif{ }
+    .btnYagiz{ }
+
+    .result{
+      margin-top:12px;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      display:none;
+    }
+    .mini{opacity:.8; font-size:13px; line-height:1.4;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html">← Ana Sayfa</a>
+      <a href="quiz.html" style="opacity:1;">Elif mi Yağız mı?</a>
+    </nav>
+
+    <div class="card">
+      <h2 style="margin:0 0 6px;">😄 Elif mi Yağız mı?</h2>
+      <p class="mini" style="margin:0 0 10px;">
+        Soruyu oku → tahmin et → “Kim bu?” seç. <br>
+        Not: Bu oyun %100 bilimsel… yani hiç değil.
+      </p>
+
+      <div class="row">
+        <div class="pill">Soru: <b id="idx">1</b>/<b id="total">8</b></div>
+        <div class="pill">Elif: <b id="scoreElif">0</b></div>
+        <div class="pill">Yağız: <b id="scoreYagiz">0</b></div>
+        <button class="btn" id="resetBtn">Sıfırla</button>
+      </div>
+
+      <div class="q">
+        <h3 id="question">...</h3>
+        <div class="row">
+          <button class="btn btnElif" id="btnElif">Elif</button>
+          <button class="btn btnYagiz" id="btnYagiz">Yağız</button>
+        </div>
+        <p class="mini" id="feedback" style="margin:10px 0 0; opacity:.85;"></p>
+      </div>
+
+      <div class="result" id="resultBox"></div>
+    </div>
+  </div>
+
+  <script>
+    // Sorular: doğru cevap "elif" veya "yagiz"
+    const questions = [
+      { q: "“Ben 5 dakika sonra çıkıyorum” deyip 45 dakika sonra çıkan kim?", a: "yagiz", ok:"Ben.", no:"Elif daha sözünün eri 😄" },
+      { q: "‘Aç değilim’ deyip masaya oturunca tabak bitiren kim?", a: "elif", ok:"Klasik Elif hareketi 😄", no:"Yağız mı? O direkt ‘açım’ der." },
+      { q: "Şarkıyı açıp ‘bu şarkı bizi anlatıyor’ diyen kim?", a: "elif", ok:"Romantizm CEO’su.", no:"Yağız da der ama Elif daha tehlikeli 💘" },
+      { q: "Bir anda ‘foto çekinelim’ diye telefonu çıkaran kim?", a: "elif", ok:"Anı avcısı Elif.", no:"Yağız genelde ‘dur saçım kötü’ modunda." },
+      { q: "‘Ben haklıyım çünkü öyle’ argümanını kullanan kim?", a: "yagiz", ok:"Mantık arama, aşk var.", no:"Elif de yapar ama bu Yağız işi 😄" },
+      { q: "Sürpriz planlayıp son anda ‘ya olmazsa’ diye panikleyen kim?", a: "yagiz", ok:"Overthink’in kralı.", no:"Elif daha rahat davranır." },
+      { q: "Trip atmayıp ‘konuşalım’ diyen kim? (zor soru)", a: "elif", ok:"Olgunluk puanı +100.", no:"Yağız ‘tamam’ deyip içten içe yazar 😄" },
+      { q: "‘Ben seni çok seviyorum’ deyip utanıp konuyu değiştiren kim?", a: "yagiz", ok:"Aynen bu.", no:"Elif daha direkt söyler." }
+    ];
+
+    const totalEl = document.getElementById("total");
+    const idxEl = document.getElementById("idx");
+    const qEl = document.getElementById("question");
+    const fbEl = document.getElementById("feedback");
+    const sElif = document.getElementById("scoreElif");
+    const sYagiz = document.getElementById("scoreYagiz");
+    const btnElif = document.getElementById("btnElif");
+    const btnYagiz = document.getElementById("btnYagiz");
+    const resetBtn = document.getElementById("resetBtn");
+    const resultBox = document.getElementById("resultBox");
+
+    totalEl.textContent = questions.length;
+
+    let i = 0;
+    let scoreE = 0;
+    let scoreY = 0;
+
+    function render(){
+      idxEl.textContent = (i + 1);
+      qEl.textContent = questions[i].q;
+      fbEl.textContent = "";
+      btnElif.disabled = false;
+      btnYagiz.disabled = false;
+      resultBox.style.display = "none";
+      resultBox.innerHTML = "";
+    }
+
+    function finish(){
+      btnElif.disabled = true;
+      btnYagiz.disabled = true;
+
+      let winner = "berabere";
+      if(scoreE > scoreY) winner = "Elif";
+      if(scoreY > scoreE) winner = "Yağız";
+
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <h3 style="margin:0 0 6px;">Bitti! 🎉</h3>
+        <p class="mini" style="margin:0 0 10px;">
+          Elif: <b>${scoreE}</b> • Yağız: <b>${scoreY}</b><br>
+          Kazanan: <b>${winner}</b>
+        </p>
+        <p class="mini" style="margin:0;">
+          ${winner === "Elif" ? "Elif haklı çıktı… şaşırtmadı 😄" :
+            winner === "Yağız" ? "Yağız kazandı… ama Elif yine de haklı 💘" :
+            "Berabere… yani ikiniz de aynı derece tatlısınız."}
+        </p>
+      `;
+    }
+
+    function answer(who){
+      const cur = questions[i];
+      const correct = (who === cur.a);
+
+      fbEl.textContent = correct ? ("✅ " + cur.ok) : ("❌ " + cur.no);
+
+      if(cur.a === "elif") { scoreE++; sElif.textContent = scoreE; }
+      else { scoreY++; sYagiz.textContent = scoreY; }
+
+      btnElif.disabled = true;
+      btnYagiz.disabled = true;
+
+      setTimeout(() => {
+        i++;
+        if(i >= questions.length) finish();
+        else render();
+      }, 850);
+    }
+
+    btnElif.addEventListener("click", () => answer("elif"));
+    btnYagiz.addEventListener("click", () => answer("yagiz"));
+
+    resetBtn.addEventListener("click", () => {
+      i = 0; scoreE = 0; scoreY = 0;
+      sElif.textContent = "0";
+      sYagiz.textContent = "0";
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
