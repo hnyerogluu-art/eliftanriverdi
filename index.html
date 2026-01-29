@@ -6,6 +6,50 @@
   <title>Elif ❤️ Yağız</title>
   <meta name="description" content="Elif için küçük bir sürpriz." />
   <style>
+    .nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  margin: 0 auto 14px;
+  max-width: 980px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+}
+
+.nav .brand{
+  font-weight:800;
+  text-decoration:none;
+  color: rgba(255,255,255,.92);
+}
+
+.nav .links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.nav .links a{
+  text-decoration:none;
+  color: rgba(255,255,255,.82);
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+.nav .links a:hover{
+  transform: translateY(-1px);
+}
+
+.nav .links a.active{
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.10);
+}
+
     /* === BACKGROUND PHOTO COLLAGE === */
     html, body{
   overflow-x: hidden;
@@ -176,6 +220,15 @@
   </style>
 </head>
 <body>
+  <nav class="nav">
+  <a class="brand" href="index.html">💘 Elif</a>
+  <div class="links">
+    <a href="index.html" class="active">Ana Sayfa</a>
+    <a href="game.html">Mini Oyun</a>
+    <a href="memories.html">Anılar</a>
+  </div>
+</nav>
+
   <div class="bg-collage" id="bgCollage"></div>
 <div class="bg-overlay"></div>
 
