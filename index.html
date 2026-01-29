@@ -82,14 +82,7 @@
             <div class="pill">✨ <b id="mins">0</b> dk</div>
           </div>
 
-          <div class="inputRow">
-            <input id="date" placeholder="Tanışma tarihi: 2025-01-01 20:30" />
-            <button id="save">Kaydet</button>
-          </div>
-          <p class="small" style="margin-top:10px;">
-            İpucu: Tarihi “YYYY-AA-GG SS:DD” gibi yaz. Kaydedince sayaç otomatik çalışır.
-          </p>
-
+        
           <div class="btns">
             <button id="random">Rastgele Tatlı Söz</button>
             <button id="confetti">Minik Kutlama</button>
@@ -118,11 +111,7 @@ Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen 
 
   <script>
     // --- Date handling ---
-    const dateInput = document.getElementById("date");
-    const saveBtn = document.getElementById("save");
 
-    function parseDate(str){
-      // Accept: "YYYY-MM-DD HH:MM" or "YYYY-MM-DD"
       const s = str.trim();
       if(!s) return null;
       const parts = s.split(" ");
@@ -145,9 +134,11 @@ Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen 
       return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
     }
 
-    let startDate = loadStart();
+    // SABİT BAŞLANGIÇ TARİHİ: 25 EYLÜL 2025 00:00
+let startDate = new Date("2025-09-25T00:00:00");
 
-    saveBtn.addEventListener("click", () => {
+
+
       const dt = parseDate(dateInput.value);
       if(!dt){
         alert("Tarih formatı olmamış 😄 Örn: 2025-01-01 20:30");
@@ -215,3 +206,4 @@ Bunu yazarken bile gülümsüyorum. Hayat bazen saçma, bazen yorucu… ama sen 
   </script>
 </body>
 </html>
+
