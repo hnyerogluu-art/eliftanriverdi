@@ -6,6 +6,40 @@
   <title>Elif ❤️ Yağız</title>
   <meta name="description" content="Elif için küçük bir sürpriz." />
   <style>
+    /* === BACKGROUND PHOTO COLLAGE === */
+    html, body{
+  overflow-x: hidden;
+}
+
+.bg-collage{
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  padding: 14px;
+  opacity: .35;
+  filter: blur(3px) saturate(1.1);
+}
+
+.bg-collage .tile{
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+/* Üstüne koyu + blur katman */
+.bg-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+}
+
     .lightbox{
   position: fixed;
   inset: 0;
@@ -142,6 +176,9 @@
   </style>
 </head>
 <body>
+  <div class="bg-collage" id="bgCollage"></div>
+<div class="bg-overlay"></div>
+
   <div class="wrap">
     <div class="hero">
       <div class="top">
@@ -283,6 +320,26 @@ Hayatıma girdiğin günden beri her saniyem daha güzel ve daha anlamlı. Hayat
       }
     });
   }
+    // === BACKGROUND COLLAGE ===
+const bgCollage = document.getElementById("bgCollage");
+
+if (bgCollage) {
+  const photos = [
+    "01.JPG","02.JPG","03.JPG","04.JPG",
+    "05.jpeg","06.jpeg","07.jpeg","08.jpeg",
+    "09.jpeg","10.jpeg"
+  ];
+
+  // 12 parça kolaj (4x3)
+  for (let i = 0; i < 12; i++) {
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    const src = photos[Math.floor(Math.random() * photos.length)];
+    tile.style.backgroundImage = `url('${src}')`;
+    bgCollage.appendChild(tile);
+  }
+}
+
 </script>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
