@@ -69,7 +69,7 @@
     <div class="card">
       <h2 style="margin:0 0 6px;">😄 Elif mi Yağız mı?</h2>
       <p class="mini" style="margin:0 0 10px;">
-        Soruyu oku → tahmin et → “Kim bu?” seç. <br>
+        Soruyu oku → tahmin et → “Kim bu?” seç sevgilim. <br>
         Not: Bu oyun %100 bilimsel… yani hiç değil.
       </p>
 
@@ -96,14 +96,14 @@
   <script>
     // Sorular: doğru cevap "elif" veya "yagiz"
     const questions = [
-      { q: "“Ben 5 dakika sonra çıkıyorum” deyip 45 dakika sonra çıkan kim?", a: "yagiz", ok:"Ben.", no:"Elif daha sözünün eri 😄" },
-      { q: "‘Aç değilim’ deyip masaya oturunca tabak bitiren kim?", a: "elif", ok:"Klasik Elif hareketi 😄", no:"Yağız mı? O direkt ‘açım’ der." },
-      { q: "Şarkıyı açıp ‘bu şarkı bizi anlatıyor’ diyen kim?", a: "elif", ok:"Romantizm CEO’su.", no:"Yağız da der ama Elif daha tehlikeli 💘" },
-      { q: "Bir anda ‘foto çekinelim’ diye telefonu çıkaran kim?", a: "elif", ok:"Anı avcısı Elif.", no:"Yağız genelde ‘dur saçım kötü’ modunda." },
-      { q: "‘Ben haklıyım çünkü öyle’ argümanını kullanan kim?", a: "yagiz", ok:"Mantık arama, aşk var.", no:"Elif de yapar ama bu Yağız işi 😄" },
-      { q: "Sürpriz planlayıp son anda ‘ya olmazsa’ diye panikleyen kim?", a: "yagiz", ok:"Overthink’in kralı.", no:"Elif daha rahat davranır." },
-      { q: "Trip atmayıp ‘konuşalım’ diyen kim? (zor soru)", a: "elif", ok:"Olgunluk puanı +100.", no:"Yağız ‘tamam’ deyip içten içe yazar 😄" },
-      { q: "‘Ben seni çok seviyorum’ deyip utanıp konuyu değiştiren kim?", a: "yagiz", ok:"Aynen bu.", no:"Elif daha direkt söyler." }
+      { q: "Kavga edip sinirlenip kışkırttıktan sonra gelip özür dileyen kimdir?", a: "yagiz", ok:"kanka özür dilerim", no:"Yağız bu işin ustası baboliii 😄" },
+      { q: "Tok olmasına rağmen sevgilisine yemek ye diyen kim?", a: "yagiz", ok:"Kıyamıyorum sana karnının aç olması bile üzüyor beni", no:"Yağız mı? ben aç kalır mıyım?" },
+      { q: "Arabada DJ kim?", a: "elif", ok:"Bunu yapman o kadar hoşuma gidiyor ki...", no:"Aşkım khontkar açar mısın demekten başka bir şey demiyorum 💘" },
+      { q: "75GB tiktok video arşivi olan kim?", a: "elif", ok:"YAAA KANKA AMA HEPSI ÇOK ÖNEMLİİ.", no:"Evlenince sana 10TB telefon ürettiricem." },
+      { q: "Her kavgada haksız olsa da haklı olan kim?", a: "elif", ok:"Kanka kendimi haklı çıkartmaya çalışmıyorum yaaa.", no:"Aşkım olsun yine özür dilerim Elif'im bitanem." },
+      { q: "En çok küfreden kim?", a: "elif", ok:"kanka küfürü azaltmalısın.", no:"Elif küfürü azaltmalısın." },
+      { q: "Trip atmayıp ‘konuşalım’ diyen kim? (Yağız)", a: "yagiz", ok:"Ben seni çok seviyorum.", no:"İlişkimiz çok güzel ve bu beni çok mutlu ediyor kavga etsek de mutluyum seninle" },
+      { q: "Yağız'ın yüzüne oturacak olan kim?", a: "elif", ok:"KENDİN KABUL ETTİN OTURUCAKSIN.", no:"ELİF LÜTFEN YÜZÜME OTUR" }
     ];
 
     const totalEl = document.getElementById("total");
@@ -162,8 +162,11 @@
 
       fbEl.textContent = correct ? ("✅ " + cur.ok) : ("❌ " + cur.no);
 
-      if(cur.a === "elif") { scoreE++; sElif.textContent = scoreE; }
-      else { scoreY++; sYagiz.textContent = scoreY; }
+    if (correct) {
+  if(cur.a === "elif") { scoreE++; sElif.textContent = scoreE; }
+  else { scoreY++; sYagiz.textContent = scoreY; }
+}
+
 
       btnElif.disabled = true;
       btnYagiz.disabled = true;
