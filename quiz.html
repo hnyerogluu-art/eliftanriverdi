@@ -6,6 +6,76 @@
   <title>Elif mi Yağız mı? 😄</title>
   <style>
 
+    .future{
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.future h2{
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.future .sub{
+  margin: 0 0 18px;
+  opacity: 0.85;
+}
+
+.checklist{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.checklist li{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.18);
+}
+
+.checklist label{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  accent-color: #ff4d8d; /* pembe tatlı */
+}
+
+.checklist input[type="checkbox"]:checked + span,
+.checklist input[type="checkbox"]:checked{
+  /* ekstra bi şey şart değil ama istersen yazıyı değiştirebiliriz */
+}
+
+.reset{
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: white;
+  cursor: pointer;
+}
+
+.reset:hover{
+  background: rgba(255,255,255,0.16);
+}
+
+
+
+    
     @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; }
 }
@@ -131,6 +201,48 @@
       <a href="quiz.html" style="opacity:1;">Elif mi Yağız mı?</a>
     </nav>
 
+
+
+    <section class="future">
+  <h2>Gelecek Planları</h2>
+  <p class="sub">Bunları tek tek yapıcaz. Acele yok 😌</p>
+
+  <ul class="checklist" id="futureList">
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_trip">
+        Beraber tatile çıkmak
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_breakfast">
+        Aynı evde kahvaltı
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_fight_makeup" checked>
+        Saçma bir kavga edip barışmak
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_open_1year">
+        Bu siteyi 1 yıl sonra tekrar açmak
+      </label>
+    </li>
+  </ul>
+
+  <button class="reset" id="resetPlans">Sıfırla</button>
+</section>
+
+
+
+    
     <div class="card">
       <h2 style="margin:0 0 6px;">😄 Elif mi Yağız mı?</h2>
       <p class="mini" style="margin:0 0 10px;">
@@ -255,6 +367,34 @@
 
     render();
   </script>
+  <script>
+  const storageKey = "futurePlans_v1";
+  const list = document.getElementById("futureList");
+  const resetBtn = document.getElementById("resetPlans");
+
+  // Kayıtlı durumları yükle
+  const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+  // Checkbox'ları başlat
+  list.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const key = cb.dataset.key;
+
+    // HTML'de checked varsa onu default al, ama localStorage varsa onu ezsin
+    if (saved.hasOwnProperty(key)) cb.checked = !!saved[key];
+
+    cb.addEventListener("change", () => {
+      saved[key] = cb.checked;
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+    });
+  });
+
+  // Sıfırla
+  resetBtn.addEventListener("click", () => {
+    list.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    localStorage.removeItem(storageKey);
+  });
+</script>
+
 </body>
   <div class="blob one"></div>
 <div class="blob two"></div>
