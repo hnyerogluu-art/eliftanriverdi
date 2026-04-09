@@ -8,6 +8,25 @@
   <title>Elif ❤️ Yağız</title>
   <meta name="description" content="Elif için küçük bir sürpriz." />
   <style>
+
+
+    .chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:14px;
+  font-weight:600;
+}
+
+.chip:hover{
+  background:rgba(255,255,255,.14);
+}
+    
     a { color: inherit; }
 a:visited { color: inherit; }
 
@@ -222,6 +241,86 @@ a:visited { color: inherit; }
       color:#fff; padding:10px 12px; border-radius:14px; outline:none;
       flex:1; min-width:220px;
     }
+
+
+
+/* ... senin mevcut csslerin ... */
+
+.future-toggle-btn{
+  cursor:pointer;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:14px;
+  font-weight:600;
+}
+
+.future-toggle-btn:hover{
+  background:rgba(255,255,255,.14);
+}
+
+.future-box{
+  display:none;
+  margin-top:16px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  border-radius:20px;
+  padding:18px;
+}
+
+.future-box.show{
+  display:block;
+}
+
+.future-box h2{
+  margin:0 0 8px;
+}
+
+.checklist{
+  list-style:none;
+  padding:0;
+  margin:14px 0 0;
+  display:grid;
+  gap:12px;
+}
+
+.checklist li{
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
+}
+
+.checklist label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+
+.checklist input[type="checkbox"]{
+  width:20px;
+  height:20px;
+  accent-color:#ff4d8d;
+}
+
+.reset{
+  margin-top:16px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.10);
+  color:white;
+  cursor:pointer;
+}
+
+.reset:hover{
+  background:rgba(255,255,255,.16);
+}
+
+
+  
   </style>
 </head>
 <body>
@@ -271,13 +370,51 @@ a:visited { color: inherit; }
 </div>
 
         
-          <div class="btns">
-            <button id="random">Fıstığım Tıkla</button>
-            <button id="confetti">Plüton'um Tıkla</button>
-            <a class="chip" href="quiz.html">😄 Elif mi Yağız mı? Quiz</a>
-
-          </div>
+         <div class="btns">
+  <button id="random">Fıstığım Tıkla</button>
+  <button id="confetti">Plüton'um Tıkla</button>
+  <button class="future-toggle-btn" id="futureToggleBtn">💭 Gelecek Planlarımız</button>
+  <a class="chip" href="quiz.html">😄 Elif mi Yağız mı? Quiz</a>
+</div>
           <p class="small" id="quote" style="margin:10px 0 0;"></p>
+          <section class="future-box" id="futurePlansBox">
+  <h2>Gelecek Planları</h2>
+  <p class="small" style="margin:0 0 12px; opacity:.85;">
+    Bunları tek tek yapıcaz. Acele yok 😌
+  </p>
+
+  <ul class="checklist" id="futureList">
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_trip">
+        <span>Beraber tatile çıkmak</span>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_breakfast">
+        <span>Aynı evde kahvaltı</span>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_fight_makeup">
+        <span>Saçma bir kavga edip barışmak</span>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" data-key="plan_open_1year">
+        <span>Bu siteyi 1 yıl sonra tekrar açmak</span>
+      </label>
+    </li>
+  </ul>
+
+  <button class="reset" id="resetPlans">Sıfırla</button>
+</section>
         </div>
 
         <div class="card">
@@ -419,6 +556,44 @@ playBtn.addEventListener("click", () => {
     note.style.opacity = "0";
   }
 });
+    // === GELECEK PLANLARI AÇ / KAPAT ===
+const futureToggleBtn = document.getElementById("futureToggleBtn");
+const futurePlansBox = document.getElementById("futurePlansBox");
+
+if (futureToggleBtn && futurePlansBox) {
+  futureToggleBtn.addEventListener("click", () => {
+    futurePlansBox.classList.toggle("show");
+  });
+}
+
+// === GELECEK PLANLARI LOCALSTORAGE ===
+const storageKey = "futurePlans_v1";
+const futureList = document.getElementById("futureList");
+const resetPlansBtn = document.getElementById("resetPlans");
+
+if (futureList && resetPlansBtn) {
+  const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+  futureList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const key = cb.dataset.key;
+
+    if (saved.hasOwnProperty(key)) {
+      cb.checked = !!saved[key];
+    }
+
+    cb.addEventListener("change", () => {
+      saved[key] = cb.checked;
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+    });
+  });
+
+  resetPlansBtn.addEventListener("click", () => {
+    futureList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.checked = false;
+    });
+    localStorage.removeItem(storageKey);
+  });
+}
 
 </script>
 
