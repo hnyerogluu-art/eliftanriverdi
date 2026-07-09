@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elif & Yağız</title>
-  <meta name="description" content="Elif ve Yağız için özel anılar, planlar ve mesajlar." />
+  <title>Elif & Yagiz</title>
+  <meta name="description" content="Elif ve Yagiz icin ozel anilar, planlar, mektuplar ve mesajlar." />
   <style>
     :root{--ink:#fff7fb;--muted:rgba(255,247,251,.72);--line:rgba(255,255,255,.18);--soft:rgba(255,255,255,.08);--soft2:rgba(255,255,255,.14);--pink:#ff4d8d;--gold:#ffd36a;--mint:#7ae7c7;--blue:#9ddcff;--shadow:0 24px 80px rgba(0,0,0,.42)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(900px 620px at 12% 8%,rgba(255,77,141,.38),transparent 62%),radial-gradient(820px 620px at 90% 18%,rgba(122,231,199,.22),transparent 58%),radial-gradient(760px 580px at 50% 100%,rgba(157,220,255,.20),transparent 58%),linear-gradient(160deg,#07070b,#151018 48%,#090a10);overflow-x:hidden}
     body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),transparent 78%);z-index:-5}
     button,input,textarea,select{font:inherit}button{border:0;color:inherit;cursor:pointer}a{color:inherit;text-decoration:none}
-    .bg-collage{position:fixed;inset:-28px;z-index:-4;display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:31vh;gap:14px;transform:rotate(-3deg) scale(1.08);opacity:.32;filter:saturate(1.16) blur(2px)}.bg-tile{border-radius:26px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 70px rgba(0,0,0,.35)}.veil{position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(7,7,11,.62),rgba(7,7,11,.92));backdrop-filter:blur(5px)}
-    .lock-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:radial-gradient(720px 520px at 35% 24%,rgba(255,77,141,.30),transparent 60%),radial-gradient(620px 520px at 70% 76%,rgba(255,211,106,.18),transparent 60%),rgba(7,7,11,.92);transition:opacity .35s ease,visibility .35s ease}.lock-screen.unlocked{opacity:0;visibility:hidden}
+    .bg-collage{position:fixed;inset:-28px;z-index:-4;display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:31vh;gap:14px;transform:rotate(-3deg) scale(1.08);opacity:.30;filter:saturate(1.16) blur(2px)}.bg-tile{border-radius:26px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 70px rgba(0,0,0,.35)}.veil{position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(7,7,11,.62),rgba(7,7,11,.92));backdrop-filter:blur(5px)}
+    .lock-screen{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:radial-gradient(720px 520px at 35% 24%,rgba(255,77,141,.30),transparent 60%),radial-gradient(620px 520px at 70% 76%,rgba(255,211,106,.18),transparent 60%),rgba(7,7,11,.92);transition:opacity .35s ease,visibility .35s ease}.lock-screen.unlocked{opacity:0;visibility:hidden}
     .lock-card{width:min(480px,100%);border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.07));border-radius:28px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(20px)}.lock-mark{width:64px;height:64px;border-radius:22px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(135deg,rgba(255,77,141,.95),rgba(255,211,106,.88));box-shadow:0 18px 46px rgba(255,77,141,.28);font-size:30px}.lock-card h1{margin:0;font-size:clamp(30px,7vw,54px);line-height:.95}.lock-card p,.section p{margin:12px 0 0;color:var(--muted);line-height:1.55}.lock-form{display:grid;gap:12px;margin-top:22px}
+    .cinema{position:fixed;inset:0;z-index:25;display:none;place-items:center;overflow:hidden;background:rgba(7,7,11,.92);backdrop-filter:blur(12px)}.cinema.show{display:grid;animation:fadeOut .7s ease 3.2s forwards}.cinema-track{position:absolute;inset:12%;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;opacity:.28;transform:rotate(-6deg) scale(1.18)}.cinema-track div{border-radius:22px;background-size:cover;background-position:center;animation:cinemaDrift 3.5s ease both}.cinema-title{position:relative;text-align:center;padding:24px}.cinema-title h2{font-size:clamp(38px,8vw,96px);line-height:.9;margin:0;background:linear-gradient(135deg,#fff,#ffd4e4 42%,#ffd36a);color:transparent;-webkit-background-clip:text;background-clip:text}.cinema-title p{color:var(--muted);font-weight:800}@keyframes cinemaDrift{from{transform:translateY(40px);opacity:.2}to{transform:translateY(-20px);opacity:1}}@keyframes fadeOut{to{opacity:0;visibility:hidden}}
     .field{width:100%;min-height:48px;border-radius:16px;border:1px solid var(--line);color:#fff;background:rgba(0,0,0,.28);outline:none;padding:0 14px}.field:focus{border-color:rgba(255,139,189,.75);box-shadow:0 0 0 4px rgba(255,77,141,.14)}textarea.field{min-height:92px;padding:12px 14px;resize:vertical}.primary{min-height:48px;border-radius:16px;padding:0 18px;background:linear-gradient(135deg,var(--pink),#ff8a5c 62%,var(--gold));font-weight:850;box-shadow:0 18px 40px rgba(255,77,141,.22)}.ghost{min-height:44px;border-radius:14px;padding:0 14px;background:var(--soft);border:1px solid var(--line);font-weight:800}.ghost:hover,.icon-btn:hover,.chip:hover{background:var(--soft2);transform:translateY(-1px)}.error{min-height:20px;color:#ffd1df;font-size:14px;margin:0}
     .app{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:18px 0 34px}.nav{position:sticky;top:12px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:22px;background:rgba(10,10,16,.62);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.22)}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-dot{width:34px;height:34px;border-radius:13px;display:grid;place-items:center;background:rgba(255,77,141,.20);border:1px solid rgba(255,255,255,.16)}.nav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.chip,.icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);padding:0 13px;color:rgba(255,255,255,.88);transition:.18s ease;white-space:nowrap}.icon-btn{width:42px;padding:0;border-radius:14px}
     .hero{min-height:calc(100vh - 110px);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);align-items:end;gap:20px;padding:34px 0 22px}.hero-copy{padding:28px 0 26px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#ffe5ef;background:rgba(255,77,141,.13);border:1px solid rgba(255,139,189,.32);border-radius:999px;padding:8px 12px;font-weight:850;margin-bottom:16px}.hero h1{font-size:clamp(44px,9vw,112px);line-height:.88;margin:0;color:transparent;background:linear-gradient(135deg,#fff,#ffd4e4 38%,#ffd36a);-webkit-background-clip:text;background-clip:text}.lead{max-width:640px;color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.7;margin:20px 0 0}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-    .glass{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.06));border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}.panel{padding:20px}.counter{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.stat{padding:16px;border-radius:18px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12)}.stat b{display:block;font-size:clamp(26px,5vw,46px);line-height:1}.stat span{display:block;margin-top:8px;color:var(--muted);font-weight:800}
+    .glass{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.06));border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}.panel{padding:20px}.counter,.countdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.stat{padding:16px;border-radius:18px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.12)}.stat b{display:block;font-size:clamp(26px,5vw,46px);line-height:1}.stat span{display:block;margin-top:8px;color:var(--muted);font-weight:800}
     .section{padding:22px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:14px}.section h2{font-size:clamp(24px,4vw,42px);margin:0}.gallery{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:12px}.photo{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.06);box-shadow:0 16px 44px rgba(0,0,0,.26)}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}.photo:hover img{transform:scale(1.055)}.photo:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(to top,rgba(0,0,0,.55),transparent)}.photo small{position:absolute;left:12px;bottom:10px;z-index:1;color:#fff;font-weight:850;text-shadow:0 2px 14px rgba(0,0,0,.5)}
-    .layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,.55fr);gap:16px;align-items:start}.stack{display:grid;gap:10px}.plan,.message{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:13px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.20)}.message{grid-template-columns:1fr}.plan input{width:20px;height:20px;accent-color:var(--pink)}.plan.done .plan-title{text-decoration:line-through;color:rgba(255,255,255,.56)}.plan-title,.msg-from{font-weight:850}.plan-date,.msg-date{display:block;color:var(--muted);font-size:13px;margin-top:3px}.mini-delete{width:34px;height:34px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#ffd1df}.admin-grid{display:grid;gap:12px}.form-row{display:grid;grid-template-columns:1fr 150px;gap:10px}.file-input{position:relative;display:grid;place-items:center;min-height:96px;border-radius:18px;border:1px dashed rgba(255,255,255,.32);background:rgba(0,0,0,.20);text-align:center;color:var(--muted);padding:12px;cursor:pointer}.file-input input{position:absolute;inset:0;opacity:0;cursor:pointer}
-    .letter{white-space:pre-wrap;line-height:1.78;color:rgba(255,255,255,.88);font-size:16px;margin:0}.quote{margin-top:13px;padding:13px 14px;border-radius:18px;background:rgba(255,77,141,.11);border:1px solid rgba(255,139,189,.22);color:#ffeaf2;font-weight:800;line-height:1.5}.lightbox{position:fixed;inset:0;z-index:30;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:22px}.lightbox.open{display:flex}.lightbox img{max-width:min(980px,94vw);max-height:86vh;border-radius:24px;border:1px solid rgba(255,255,255,.20);box-shadow:var(--shadow)}.toast{position:fixed;right:16px;bottom:16px;z-index:40;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(12,12,18,.78);backdrop-filter:blur(14px);color:#fff;opacity:0;transform:translateY(12px);transition:.25s ease;box-shadow:0 18px 45px rgba(0,0,0,.26)}.toast.show{opacity:1;transform:translateY(0)}.footer{text-align:center;color:rgba(255,255,255,.58);padding:20px 0 10px;font-size:13px}
-    @media (max-width:900px){.hero,.layout{grid-template-columns:1fr}.hero{align-items:center;padding-top:24px}.gallery{grid-template-columns:repeat(3,1fr)}.nav{align-items:flex-start}.counter{grid-template-columns:1fr 1fr 1fr}}
-    @media (max-width:560px){.app{width:min(100% - 22px,1180px);padding-top:10px}.nav{position:relative;top:0}.nav-links{width:100%;justify-content:flex-start}.hero h1{font-size:50px}.counter{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.panel{padding:16px}.section-head{align-items:flex-start;flex-direction:column}.lock-card{padding:22px}}
+    .layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,.55fr);gap:16px;align-items:start}.stack{display:grid;gap:10px}.plan,.message,.memory,.letter-card,.todo-card,.countdown-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:13px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.20)}.message,.memory,.letter-card,.countdown-card{grid-template-columns:1fr}.plan input,.todo-card input{width:20px;height:20px;accent-color:var(--pink)}.plan.done .plan-title,.todo-card.done .plan-title{text-decoration:line-through;color:rgba(255,255,255,.56)}.plan-title,.msg-from{font-weight:850}.plan-date,.msg-date{display:block;color:var(--muted);font-size:13px;margin-top:3px}.mini-delete{width:34px;height:34px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#ffd1df}.admin-grid{display:grid;gap:12px}.form-row{display:grid;grid-template-columns:1fr 150px;gap:10px}.file-input{position:relative;display:grid;place-items:center;min-height:96px;border-radius:18px;border:1px dashed rgba(255,255,255,.32);background:rgba(0,0,0,.20);text-align:center;color:var(--muted);padding:12px;cursor:pointer}.file-input input{position:absolute;inset:0;opacity:0;cursor:pointer}.memory img{width:100%;max-height:260px;object-fit:cover;border-radius:16px;margin-top:10px}.locked{opacity:.72}.tag{display:inline-flex;width:max-content;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);padding:5px 9px;color:rgba(255,255,255,.82);font-size:12px;font-weight:800}.todo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.todo-tab.active{background:rgba(255,77,141,.22);border-color:rgba(255,139,189,.42)}
+    .letter{white-space:pre-wrap;line-height:1.78;color:rgba(255,255,255,.88);font-size:16px;margin:0}.quote{margin-top:13px;padding:13px 14px;border-radius:18px;background:rgba(255,77,141,.11);border:1px solid rgba(255,139,189,.22);color:#ffeaf2;font-weight:800;line-height:1.5}.lightbox{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.78);padding:22px}.lightbox.open{display:flex}.lightbox img{max-width:min(980px,94vw);max-height:86vh;border-radius:24px;border:1px solid rgba(255,255,255,.20);box-shadow:var(--shadow)}.toast{position:fixed;right:16px;bottom:16px;z-index:50;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(12,12,18,.78);backdrop-filter:blur(14px);color:#fff;opacity:0;transform:translateY(12px);transition:.25s ease;box-shadow:0 18px 45px rgba(0,0,0,.26)}.toast.show{opacity:1;transform:translateY(0)}.footer{text-align:center;color:rgba(255,255,255,.58);padding:20px 0 10px;font-size:13px}
+    @media (max-width:900px){.hero,.layout{grid-template-columns:1fr}.hero{align-items:center;padding-top:24px}.gallery{grid-template-columns:repeat(3,1fr)}.nav{align-items:flex-start}.counter,.countdown-grid{grid-template-columns:1fr 1fr 1fr}}
+    @media (max-width:560px){.app{width:min(100% - 22px,1180px);padding-top:10px}.nav{position:relative;top:0}.nav-links{width:100%;justify-content:flex-start}.hero h1{font-size:50px}.counter,.countdown-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.panel{padding:16px}.section-head{align-items:flex-start;flex-direction:column}.lock-card{padding:22px}}
   </style>
 </head>
 <body>
@@ -29,178 +30,117 @@
   <section class="lock-screen" id="lockScreen">
     <div class="lock-card">
       <div class="lock-mark">♥</div>
-      <h1>Elif'in özel evreni</h1>
-      <p>Bu sayfa sadece ikinizin. Giriş yapan telefonda fotoğraflar, planlar ve mesajlar ortak görünür.</p>
+      <h1>Elif'in ozel evreni</h1>
+      <p>Bu sayfa sadece ikinizin. Giris yapan telefonda fotograflar, planlar, mektuplar ve mesajlar ortak gorunur.</p>
       <form class="lock-form" id="loginForm">
-        <select class="field" id="personSelect">
-          <option value="yagiz">Yağız</option>
-          <option value="elif">Elif</option>
-        </select>
-        <input class="field" id="passwordInput" type="password" autocomplete="current-password" placeholder="Şifre" />
-        <button class="primary" type="submit">İçeri gir</button>
+        <select class="field" id="personSelect"><option value="yagiz">Yagiz</option><option value="elif">Elif</option></select>
+        <input class="field" id="passwordInput" type="password" autocomplete="current-password" placeholder="Sifre" />
+        <button class="primary" type="submit">Iceri gir</button>
         <p class="error" id="loginError"></p>
       </form>
     </div>
   </section>
+  <section class="cinema" id="cinema"><div class="cinema-track" id="cinemaTrack"></div><div class="cinema-title"><h2 id="welcomeTitle">Hos geldin</h2><p>Birazdan bizim evrene geciyoruz.</p></div></section>
 
   <main class="app" id="app" aria-hidden="true">
     <nav class="nav">
-      <a class="brand" href="#top"><span class="brand-dot">♥</span><span>Elif & Yağız</span></a>
+      <a class="brand" href="#top"><span class="brand-dot">♥</span><span>Elif & Yagiz</span></a>
       <div class="nav-links">
-        <a class="chip" href="#galeri">Galeri</a><a class="chip" href="#planlar">Planlar</a><a class="chip" href="#mesajlar">Mesajlar</a><a class="chip" href="quiz.html">Quiz</a>
-        <button class="icon-btn" id="musicBtn" type="button" title="Müzik">▶</button><button class="icon-btn" id="logoutBtn" type="button" title="Çıkış">⌁</button>
+        <a class="chip" href="#galeri">Galeri</a><a class="chip" href="#anilar">Anilar</a><a class="chip" href="#mektuplar">Mektuplar</a><a class="chip" href="#yapilacaklar">Liste</a><a class="chip" href="#sayaclar">Sayac</a><a class="chip" href="#mesajlar">Mesaj</a><a class="chip" href="quiz.html">Quiz</a>
+        <button class="icon-btn" id="musicBtn" type="button" title="Muzik">▶</button><button class="icon-btn" id="logoutBtn" type="button" title="Cikis">x</button>
       </div>
     </nav>
     <section class="hero" id="top">
       <div class="hero-copy">
         <div class="eyebrow">25.09.2025'ten beri</div>
-        <h1>Elif Tanrıverdi</h1>
-        <p class="lead">Seni tanımakla başladı, aşık olmakla devam ediyor. Burası bizim küçük ama şaşalı hatıra defterimiz.</p>
-        <div class="hero-actions"><a class="primary chip" href="#planlar">Yeni plan ekle</a><button class="ghost" id="randomQuote" type="button">Bir söz söyle</button><button class="ghost" id="confettiBtn" type="button">Parlat</button></div>
+        <h1>Elif Tanriverdi</h1>
+        <p class="lead">Seni tanimakla basladi, asik olmakla devam ediyor. Burasi bizim kucuk ama sasali hatira defterimiz.</p>
+        <div class="hero-actions"><a class="primary chip" href="#anilar">Ani ekle</a><a class="ghost chip" href="#mektuplar">Mektup birak</a><button class="ghost" id="randomQuote" type="button">Bir soz soyle</button><button class="ghost" id="confettiBtn" type="button">Parlat</button></div>
         <div class="quote" id="quote"></div>
       </div>
-      <aside class="glass panel"><h2 style="margin:0">Hayatımın anlamlı olduğu süre</h2><p>Her dakika biraz daha bizim oluyor.</p><div class="counter"><div class="stat"><b id="days">0</b><span>gün</span></div><div class="stat"><b id="hours">0</b><span>saat</span></div><div class="stat"><b id="mins">0</b><span>dakika</span></div></div></aside>
+      <aside class="glass panel"><h2 style="margin:0">Hayatimin anlamli oldugu sure</h2><p>Her dakika biraz daha bizim oluyor.</p><div class="counter"><div class="stat"><b id="days">0</b><span>gun</span></div><div class="stat"><b id="hours">0</b><span>saat</span></div><div class="stat"><b id="mins">0</b><span>dakika</span></div></div></aside>
     </section>
 
-    <section class="section" id="galeri"><div class="section-head"><div><h2>Plüton ve Eşeği</h2><p>Yüklenen fotoğraflar Firebase Storage'a gider ve Elif'in telefonunda da görünür.</p></div></div><div class="gallery" id="gallery"></div></section>
+    <section class="section" id="galeri"><div class="section-head"><div><h2>Pluton ve Esegi</h2><p>Yuklenen fotograflar kucultulup Firestore'a kaydolur, Elif'in telefonunda da gorunur.</p></div></div><div class="gallery" id="gallery"></div></section>
 
-    <section class="section" id="planlar"><div class="layout"><div class="glass panel"><div class="section-head" style="margin-bottom:12px"><div><h2>Yapılacak güzellikler</h2><p>Eklenen etkinlikler iki telefonda da canlı güncellenir.</p></div></div><div class="stack" id="plansList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Yönetim</h2><div class="admin-grid"><input class="field" id="planTitle" type="text" placeholder="Etkinlik adı" /><div class="form-row"><input class="field" id="planNote" type="text" placeholder="Küçük not" /><input class="field" id="planDate" type="date" /></div><button class="primary" id="addPlanBtn" type="button">Etkinlik ekle</button><label class="file-input"><input id="photoInput" type="file" accept="image/*" multiple /><span>Beraber fotoğraflarınızı seçin</span></label></div></aside></div></section>
+    <section class="section" id="anilar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Ani defteri</h2><p>Tarih sec, bugun ne oldu yaz, istersen fotograf ekle.</p></div></div><div class="stack" id="memoriesList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Ani ekle</h2><div class="admin-grid"><input class="field" id="memoryTitle" type="text" placeholder="Baslik" /><input class="field" id="memoryDate" type="date" /><textarea class="field" id="memoryText" placeholder="Bugun ne oldu?"></textarea><label class="file-input"><input id="memoryPhotoInput" type="file" accept="image/*" /><span>Ani fotografi sec</span></label><button class="primary" id="addMemoryBtn" type="button">Aniyi kaydet</button></div></aside></div></section>
 
-    <section class="section" id="mesajlar"><div class="layout"><div class="glass panel"><div class="section-head" style="margin-bottom:12px"><div><h2>Mesaj kutusu</h2><p>Buraya yazdığın mesaj site içinde Elif'e de düşer. WhatsApp butonu mesajı hazır açar.</p></div></div><div class="stack" id="messagesList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Mesaj yaz</h2><div class="admin-grid"><textarea class="field" id="messageText" placeholder="Elif'e yazacağın mesaj"></textarea><button class="primary" id="sendMessageBtn" type="button">Siteye gönder</button><button class="ghost" id="whatsappBtn" type="button">WhatsApp'ta aç</button></div></aside></div></section>
+    <section class="section" id="mektuplar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Gizli mektup kutusu</h2><p>Tarihi gelene kadar mektup kapali kalir.</p></div></div><div class="stack" id="lettersList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Mektup birak</h2><div class="admin-grid"><input class="field" id="letterTitle" type="text" placeholder="Mektup basligi" /><input class="field" id="letterOpenDate" type="date" /><textarea class="field" id="letterText" placeholder="O gun geldiginde okunacak sey"></textarea><button class="primary" id="addLetterBtn" type="button">Kilitle</button></div></aside></div></section>
 
-    <section class="section"><div class="glass panel"><h2 style="margin:0 0 12px">Elif seni çok seviyorum</h2><p class="letter">Elif,
+    <section class="section" id="yapilacaklar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Beraber yapilacaklar</h2><p>Gidilecek yerler, filmler, sarkilar ve yemekler tek listede.</p></div></div><div class="todo-tabs" id="todoTabs"></div><div class="stack" id="todosList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Listeye ekle</h2><div class="admin-grid"><select class="field" id="todoCategory"><option value="places">Gidilecek yer</option><option value="movies">Izlenecek film</option><option value="songs">Dinlenecek sarki</option><option value="foods">Denenecek yemek</option></select><input class="field" id="todoTitle" type="text" placeholder="Ne ekleyelim?" /><input class="field" id="todoNote" type="text" placeholder="Kucuk not" /><button class="primary" id="addTodoBtn" type="button">Listeye ekle</button></div></aside></div></section>
 
-Hayatıma girdiğin günden beri her saniyem daha güzel ve daha anlamlı. Hayat bazen çok yorucu ve saçma ama hayatımda sen varken saçma olan şeyler bile anlamlı geliyor.
+    <section class="section" id="sayaclar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Ozel geri sayimlar</h2><p>Yil donumu, sonraki bulusma, dogum gunu ya da aklina gelen her sey.</p></div></div><div class="countdown-grid" id="countdownsList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Sayac ekle</h2><div class="admin-grid"><input class="field" id="countdownTitle" type="text" placeholder="Orn: Yil donumu" /><input class="field" id="countdownDate" type="date" /><button class="primary" id="addCountdownBtn" type="button">Sayac ekle</button></div></aside></div></section>
 
-Senin bana bakışın, sarılışın, dokunuşun, öpüşün; her şeyin ayrı güzel geliyor. Her saniye yanında durmak istiyorum.
+    <section class="section" id="planlar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Yapilacak guzellikler</h2><p>Eklenen etkinlikler iki telefonda da canli guncellenir.</p></div></div><div class="stack" id="plansList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Etkinlik</h2><div class="admin-grid"><input class="field" id="planTitle" type="text" placeholder="Etkinlik adi" /><div class="form-row"><input class="field" id="planNote" type="text" placeholder="Kucuk not" /><input class="field" id="planDate" type="date" /></div><button class="primary" id="addPlanBtn" type="button">Etkinlik ekle</button><label class="file-input"><input id="photoInput" type="file" accept="image/*" multiple /><span>Beraber fotograflarinizi secin</span></label></div></aside></div></section>
 
-Benim için çok değerlisin. Seni her zaman, her koşulda mutlu edeceğim. İyi ki varsın. İyi ki benimlesin.</p></div></section>
-    <div class="footer">Made with love by Yağız</div>
+    <section class="section" id="mesajlar"><div class="layout"><div class="glass panel"><div class="section-head"><div><h2>Mesaj kutusu</h2><p>Buraya yazdigin mesaj site icinde Elif'e de duser. WhatsApp butonu mesaji hazir acar.</p></div></div><div class="stack" id="messagesList"></div></div><aside class="glass panel"><h2 style="margin:0 0 10px">Mesaj yaz</h2><div class="admin-grid"><textarea class="field" id="messageText" placeholder="Elif'e yazacagin mesaj"></textarea><button class="primary" id="sendMessageBtn" type="button">Siteye gonder</button><button class="ghost" id="whatsappBtn" type="button">WhatsApp'ta ac</button></div></aside></div></section>
+
+    <section class="section"><div class="glass panel"><h2 style="margin:0 0 12px">Elif seni cok seviyorum</h2><p class="letter">Elif,
+
+Hayatima girdigin gunden beri her saniyem daha guzel ve daha anlamli. Hayat bazen cok yorucu ve sacma ama hayatimda sen varken sacma olan seyler bile anlamli geliyor.
+
+Senin bana bakisin, sarilisin, dokunusun, opusun; her seyin ayri guzel geliyor. Her saniye yaninda durmak istiyorum.
+
+Benim icin cok degerlisin. Seni her zaman, her kosulda mutlu edecegim. Iyi ki varsin. Iyi ki benimlesin.</p></div></section>
+    <div class="footer">Made with love by Yagiz</div>
   </main>
 
-  <audio id="song" src="askim.mp3" preload="none"></audio><div class="lightbox" id="lightbox"><img id="lightboxImg" alt="Büyük fotoğraf" /></div><div class="toast" id="toast"></div>
+  <audio id="song" src="askim.mp3" preload="none"></audio><div class="lightbox" id="lightbox"><img id="lightboxImg" alt="Buyuk fotograf" /></div><div class="toast" id="toast"></div>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
     import { getFirestore, collection, addDoc, deleteDoc, doc, updateDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBsSO0pSIeP7KIyYSfrAkEffRQB2MMfpc0",
-      authDomain: "eliftanriverdi-1f1f8.firebaseapp.com",
-      projectId: "eliftanriverdi-1f1f8",
-      storageBucket: "eliftanriverdi-1f1f8.firebasestorage.app",
-      messagingSenderId: "1054826278354",
-      appId: "1:1054826278354:web:9223db4ce1f5aab0baac0b",
-      measurementId: "G-G6FCFQJDEN"
-    };
-    const people = {
-      yagiz: {name:"Yağız", email:"yagiz@eliftanriverdi.xyz"},
-      elif: {name:"Elif", email:"elif@eliftanriverdi.xyz"}
-    };
-    const elifPhone = "905XXXXXXXXX";
-    const basePhotos = ["01.JPG","02.JPG","03.JPG","04.JPG","05.JPG","06.JPG","07.JPG","08.JPG","09.JPG","10.JPG"];
-    const startDate = new Date("2025-09-25T00:00:00");
-    const quotes = ["Gözlerin gözlerime değmediği bir an olmasın.","Herkese aynı, bana farklı davranmana bayılıyorum.","Sinirliyken bile kalbimin en güzel yerindesin.","Trip atan, nazlanan sevgilim; seni çok seviyorum.","Güldüğünde parlayan gözlerin için her şeye değer.","Yanımda olmasan bile aklımda hep varsın."];
-    const $ = id => document.getElementById(id);
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    let currentPerson = "yagiz";
-
+    const firebaseConfig={apiKey:"AIzaSyBsSO0pSIeP7KIyYSfrAkEffRQB2MMfpc0",authDomain:"eliftanriverdi-1f1f8.firebaseapp.com",projectId:"eliftanriverdi-1f1f8",storageBucket:"eliftanriverdi-1f1f8.firebasestorage.app",messagingSenderId:"1054826278354",appId:"1:1054826278354:web:9223db4ce1f5aab0baac0b",measurementId:"G-G6FCFQJDEN"};
+    const people={yagiz:{name:"Yagiz",email:"yagiz@eliftanriverdi.xyz"},elif:{name:"Elif",email:"elif@eliftanriverdi.xyz"}};
+    const elifPhone="905XXXXXXXXX";
+    const basePhotos=["01.JPG","02.JPG","03.JPG","04.JPG","05.JPG","06.JPG","07.JPG","08.JPG","09.JPG","10.JPG"];
+    const startDate=new Date("2025-09-25T00:00:00");
+    const quotes=["Gozlerin gozlerime degmedigi bir an olmasin.","Herkese ayni, bana farkli davranmana bayiliyorum.","Sinirliyken bile kalbimin en guzel yerindesin.","Trip atan, nazlanan sevgilim; seni cok seviyorum.","Guldugunde parlayan gozlerin icin her seye deger.","Yanimda olmasan bile aklimda hep varsin."];
+    const cats={places:"Gidilecek yerler",movies:"Izlenecek filmler",songs:"Dinlenecek sarkilar",foods:"Denenecek yemekler"};
+    const $=id=>document.getElementById(id);const app=initializeApp(firebaseConfig);const auth=getAuth(app);const db=getFirestore(app);let currentPerson="yagiz";let currentTodoCat="places";let realtimeStarted=false;
     function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2200)}
-    function escapeHtml(text){return String(text || "").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[c]))}
-    function fmtDate(value){try{return value?.toDate ? value.toDate().toLocaleString("tr-TR") : ""}catch{return ""}}
-    function unlock(){$("lockScreen").classList.add("unlocked");$("app").setAttribute("aria-hidden","false")}
-
-    $("loginForm").addEventListener("submit", async event => {
-      event.preventDefault();
-      currentPerson = $("personSelect").value;
-      $("loginError").textContent = "";
-      try { await signInWithEmailAndPassword(auth, people[currentPerson].email, $("passwordInput").value); }
-      catch { $("loginError").textContent = "Giriş olmadı kanka. Firebase hesabı/şifreyi kontrol et."; }
-    });
-    $("logoutBtn").addEventListener("click", () => signOut(auth));
-    onAuthStateChanged(auth, user => { if (user) { currentPerson = user.email?.startsWith("elif") ? "elif" : "yagiz"; unlock(); startRealtime(); } });
-
-    function tick(){const diff=Math.abs(Date.now()-startDate.getTime());const minutes=Math.floor(diff/60000);const hoursTotal=Math.floor(minutes/60);$("days").textContent=Math.floor(hoursTotal/24);$("hours").textContent=hoursTotal%24;$("mins").textContent=minutes%60}
-    tick(); setInterval(tick,1000);
-    function renderCollage(){const collage=$("bgCollage");collage.innerHTML="";for(let i=0;i<15;i++){const tile=document.createElement("div");tile.className="bg-tile";tile.style.backgroundImage=`url('${basePhotos[i%basePhotos.length]}')`;collage.appendChild(tile)}} renderCollage();
-    function setQuote(){$("quote").textContent="“"+quotes[Math.floor(Math.random()*quotes.length)]+"”"} $("randomQuote").addEventListener("click",setQuote); setQuote();
-
+    function escapeHtml(text){return String(text||"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[c]))}
+    function fmtDate(value){try{return value?.toDate?value.toDate().toLocaleString("tr-TR"):""}catch{return""}}
+    function todayStr(){return new Date().toISOString().slice(0,10)}
+    function unlock(){ $("welcomeTitle").textContent=`Hos geldin ${people[currentPerson].name}`;$("lockScreen").classList.add("unlocked");$("app").setAttribute("aria-hidden","false");showCinema();playSong(true)}
+    function showCinema(){const wrap=$("cinemaTrack");wrap.innerHTML="";basePhotos.forEach(src=>{const d=document.createElement("div");d.style.backgroundImage=`url('${src}')`;wrap.appendChild(d)});$("cinema").classList.add("show");setTimeout(()=>$("cinema").classList.remove("show"),4100)}
+    function playSong(quiet=false){const song=$("song");song.play().then(()=>$("musicBtn").textContent="||").catch(()=>{if(!quiet)toast("Muzik icin bir kez daha bas.")})}
+    $("loginForm").addEventListener("submit",async event=>{event.preventDefault();currentPerson=$("personSelect").value;$("loginError").textContent="";try{await signInWithEmailAndPassword(auth,people[currentPerson].email,$("passwordInput").value)}catch{$("loginError").textContent="Giris olmadi kanka. Firebase hesabi/sifreyi kontrol et."}});
+    $("logoutBtn").addEventListener("click",()=>signOut(auth));onAuthStateChanged(auth,user=>{if(user){currentPerson=user.email?.startsWith("elif")?"elif":"yagiz";unlock();if(!realtimeStarted){realtimeStarted=true;startRealtime()}}});
+    function tick(){const diff=Math.abs(Date.now()-startDate.getTime());const minutes=Math.floor(diff/60000);const hoursTotal=Math.floor(minutes/60);$("days").textContent=Math.floor(hoursTotal/24);$("hours").textContent=hoursTotal%24;$("mins").textContent=minutes%60}tick();setInterval(tick,1000);setInterval(renderCountdownTimes,60000);
+    function renderCollage(){const collage=$("bgCollage");collage.innerHTML="";for(let i=0;i<15;i++){const tile=document.createElement("div");tile.className="bg-tile";tile.style.backgroundImage=`url('${basePhotos[i%basePhotos.length]}')`;collage.appendChild(tile)}}renderCollage();
+    function setQuote(){$("quote").textContent="\""+quotes[Math.floor(Math.random()*quotes.length)]+"\""}$("randomQuote").addEventListener("click",setQuote);setQuote();
+    let countdownCache=[];
     function startRealtime(){
-      onSnapshot(query(collection(db,"photos"), orderBy("createdAt","desc")), snap => {
-        const uploaded = snap.docs.map(d => ({id:d.id, ...d.data()}));
-        const all = [...uploaded.map((p,i)=>({src:p.url,label:p.caption || `Bizden ${uploaded.length-i}`})), ...basePhotos.map((src,i)=>({src,label:`Anı ${i+1}`}))];
-        $("gallery").innerHTML = all.map(item=>`<button class="photo" type="button" data-src="${item.src}"><img src="${item.src}" alt="${escapeHtml(item.label)}" loading="lazy"><small>${escapeHtml(item.label)}</small></button>`).join("");
-      });
-      onSnapshot(query(collection(db,"plans"), orderBy("createdAt","desc")), snap => {
-        $("plansList").innerHTML = snap.docs.map(d => {const p=d.data();return `<label class="plan ${p.done?"done":""}"><input type="checkbox" data-plan-check="${d.id}" ${p.done?"checked":""}><span><span class="plan-title">${escapeHtml(p.title)}</span><span class="plan-date">${escapeHtml([p.date,p.note].filter(Boolean).join(" - "))}</span></span><button class="mini-delete" type="button" data-plan-delete="${d.id}" title="Sil">x</button></label>`}).join("") || `<p>İlk planı sağdan ekle.</p>`;
-      });
-      onSnapshot(query(collection(db,"messages"), orderBy("createdAt","desc")), snap => {
-        $("messagesList").innerHTML = snap.docs.map(d => {const m=d.data();return `<article class="message"><div><span class="msg-from">${escapeHtml(m.from || "Biz")}</span><span class="msg-date">${fmtDate(m.createdAt)}</span></div><div>${escapeHtml(m.text)}</div></article>`}).join("") || `<p>Henüz mesaj yok.</p>`;
-      });
+      onSnapshot(query(collection(db,"photos"),orderBy("createdAt","desc")),snap=>{const uploaded=snap.docs.map(d=>({id:d.id,...d.data()}));const all=[...uploaded.map((p,i)=>({src:p.url,label:p.caption||`Bizden ${uploaded.length-i}`})),...basePhotos.map((src,i)=>({src,label:`Ani ${i+1}`}))];$("gallery").innerHTML=all.map(item=>`<button class="photo" type="button" data-src="${item.src}"><img src="${item.src}" alt="${escapeHtml(item.label)}" loading="lazy"><small>${escapeHtml(item.label)}</small></button>`).join("")});
+      onSnapshot(query(collection(db,"plans"),orderBy("createdAt","desc")),snap=>{$("plansList").innerHTML=snap.docs.map(d=>{const p=d.data();return `<label class="plan ${p.done?"done":""}"><input type="checkbox" data-plan-check="${d.id}" ${p.done?"checked":""}><span><span class="plan-title">${escapeHtml(p.title)}</span><span class="plan-date">${escapeHtml([p.date,p.note].filter(Boolean).join(" - "))}</span></span><button class="mini-delete" type="button" data-plan-delete="${d.id}" title="Sil">x</button></label>`}).join("")||`<p>Ilk plani sagdan ekle.</p>`});
+      onSnapshot(query(collection(db,"messages"),orderBy("createdAt","desc")),snap=>{$("messagesList").innerHTML=snap.docs.map(d=>{const m=d.data();return `<article class="message"><div><span class="msg-from">${escapeHtml(m.from||"Biz")}</span><span class="msg-date">${fmtDate(m.createdAt)}</span></div><div>${escapeHtml(m.text)}</div></article>`}).join("")||`<p>Henuz mesaj yok.</p>`});
+      onSnapshot(query(collection(db,"memories"),orderBy("createdAt","desc")),snap=>{$("memoriesList").innerHTML=snap.docs.map(d=>{const m=d.data();return `<article class="memory"><div><span class="tag">${escapeHtml(m.date||"Tarihsiz")}</span><h3>${escapeHtml(m.title||"Ani")}</h3><p>${escapeHtml(m.text)}</p><span class="plan-date">${escapeHtml(m.from||"Biz")}</span>${m.photo?`<img src="${m.photo}" alt="${escapeHtml(m.title||"Ani fotografi")}">`:""}</div></article>`}).join("")||`<p>Ilk aniyi sagdan ekle.</p>`});
+      onSnapshot(query(collection(db,"letters"),orderBy("createdAt","desc")),snap=>{$("lettersList").innerHTML=snap.docs.map(d=>renderLetter(d.id,d.data())).join("")||`<p>Henuz kilitli mektup yok.</p>`});
+      onSnapshot(query(collection(db,"todos"),orderBy("createdAt","desc")),snap=>{window.todoDocs=snap.docs.map(d=>({id:d.id,...d.data()}));renderTodoTabs();renderTodos()});
+      onSnapshot(query(collection(db,"countdowns"),orderBy("createdAt","desc")),snap=>{countdownCache=snap.docs.map(d=>({id:d.id,...d.data()}));renderCountdownTimes()});
     }
-
-    $("addPlanBtn").addEventListener("click", async () => {
-      const title = $("planTitle").value.trim();
-      if (!title) return toast("Önce etkinlik adını yaz.");
-      await addDoc(collection(db,"plans"), {title, note:$("planNote").value.trim(), date:$("planDate").value, done:false, createdBy:people[currentPerson].name, createdAt:serverTimestamp()});
-      $("planTitle").value=""; $("planNote").value=""; $("planDate").value=""; toast("Etkinlik eklendi.");
-    });
-    $("plansList").addEventListener("click", async event => {
-      const check = event.target.closest("[data-plan-check]");
-      const del = event.target.closest("[data-plan-delete]");
-      if (check) await updateDoc(doc(db,"plans",check.dataset.planCheck), {done:check.checked});
-      if (del) await deleteDoc(doc(db,"plans",del.dataset.planDelete));
-    });
-    $("photoInput").addEventListener("change", async event => {
-      const files = [...event.target.files].filter(file => file.type.startsWith("image/"));
-      for (const file of files) {
-        const url = await compressImage(file);
-        await addDoc(collection(db,"photos"), {url, caption:"Bizden", uploadedBy:people[currentPerson].name, createdAt:serverTimestamp()});
-      }
-      event.target.value = ""; toast("Fotoğraflar yüklendi.");
-    });
-    function compressImage(file){
-      return new Promise((resolve,reject)=>{
-        const img = new Image();
-        const reader = new FileReader();
-        reader.onload = () => { img.src = reader.result; };
-        reader.onerror = reject;
-        img.onload = () => {
-          const maxSide = 1100;
-          const scale = Math.min(1, maxSide / Math.max(img.width,img.height));
-          const canvas = document.createElement("canvas");
-          canvas.width = Math.round(img.width * scale);
-          canvas.height = Math.round(img.height * scale);
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img,0,0,canvas.width,canvas.height);
-          resolve(canvas.toDataURL("image/jpeg",0.72));
-        };
-        img.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-    async function sendSiteMessage(){
-      const text = $("messageText").value.trim();
-      if (!text) return toast("Mesaj boş olmasın.");
-      await addDoc(collection(db,"messages"), {text, from:people[currentPerson].name, createdAt:serverTimestamp()});
-      $("messageText").value = ""; toast("Mesaj siteye düştü.");
-      return text;
-    }
-    $("sendMessageBtn").addEventListener("click", sendSiteMessage);
-    $("whatsappBtn").addEventListener("click", async () => {
-      const text = $("messageText").value.trim() || "Seni çok seviyorum.";
-      if ($("messageText").value.trim()) await sendSiteMessage();
-      window.open(`https://wa.me/${elifPhone}?text=${encodeURIComponent(text)}`,"_blank");
-    });
-
-    $("gallery").addEventListener("click", event => {const btn=event.target.closest(".photo");if(!btn)return;$("lightboxImg").src=btn.dataset.src;$("lightbox").classList.add("open")});
-    $("lightbox").addEventListener("click",()=>$("lightbox").classList.remove("open"));
-    document.addEventListener("keydown",event=>{if(event.key==="Escape")$("lightbox").classList.remove("open")});
-    const song=$("song");$("musicBtn").addEventListener("click",async()=>{if(song.paused){await song.play();$("musicBtn").textContent="⏸"}else{song.pause();$("musicBtn").textContent="▶"}});
-    $("confettiBtn").addEventListener("click",()=>{for(let i=0;i<34;i++){const s=document.createElement("span");s.textContent=["♥","✦","✧","✨"][Math.floor(Math.random()*4)];s.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-24px;z-index:50;font-size:${16+Math.random()*22}px;transition:transform 1.4s linear, opacity 1.4s linear;pointer-events:none;color:${["#ff8bbd","#ffd36a","#9ddcff","#fff"][Math.floor(Math.random()*4)]}`;document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform=`translateY(${110+Math.random()*24}vh) rotate(${Math.random()*420}deg)`;s.style.opacity="0"});setTimeout(()=>s.remove(),1500)}})
+    function renderLetter(id,l){const locked=(l.openDate||"9999-12-31")>todayStr();return `<article class="letter-card ${locked?"locked":""}"><div><span class="tag">${locked?"Kilitli: "+escapeHtml(l.openDate):"Acildi"}</span><h3>${escapeHtml(l.title||"Mektup")}</h3><p>${locked?"Bu mektup zamani gelince acilacak.":escapeHtml(l.text)}</p><span class="plan-date">${escapeHtml(l.from||"Biz")}</span></div></article>`}
+    function renderTodoTabs(){$("todoTabs").innerHTML=Object.entries(cats).map(([key,label])=>`<button class="ghost todo-tab ${key===currentTodoCat?"active":""}" type="button" data-todo-tab="${key}">${label}</button>`).join("")}
+    function renderTodos(){const list=(window.todoDocs||[]).filter(t=>t.category===currentTodoCat);$("todosList").innerHTML=list.map(t=>`<label class="todo-card ${t.done?"done":""}"><input type="checkbox" data-todo-check="${t.id}" ${t.done?"checked":""}><span><span class="plan-title">${escapeHtml(t.title)}</span><span class="plan-date">${escapeHtml(t.note||cats[t.category])}</span></span><button class="mini-delete" type="button" data-todo-delete="${t.id}">x</button></label>`).join("")||`<p>Bu kategoriye ilk seyi sagdan ekle.</p>`}
+    function renderCountdownTimes(){$("countdownsList").innerHTML=countdownCache.map(c=>{const target=new Date(`${c.date}T00:00:00`);const diff=target-Date.now();const days=Math.ceil(diff/86400000);return `<article class="countdown-card"><span class="tag">${escapeHtml(c.date)}</span><h3>${escapeHtml(c.title)}</h3><div class="stat"><b>${days>=0?days:0}</b><span>gun kaldi</span></div><button class="mini-delete" type="button" data-countdown-delete="${c.id}">x</button></article>`}).join("")||`<p>Ilk geri sayimi sagdan ekle.</p>`}
+    async function compressImage(file,maxSide=760,quality=.62){return new Promise((resolve,reject)=>{const img=new Image();const reader=new FileReader();reader.onload=()=>{img.src=reader.result};reader.onerror=reject;img.onload=()=>{const scale=Math.min(1,maxSide/Math.max(img.width,img.height));const canvas=document.createElement("canvas");canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);const ctx=canvas.getContext("2d");ctx.drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL("image/jpeg",quality))};img.onerror=reject;reader.readAsDataURL(file)})}
+    $("addPlanBtn").addEventListener("click",async()=>{const title=$("planTitle").value.trim();if(!title)return toast("Once etkinlik adini yaz.");await addDoc(collection(db,"plans"),{title,note:$("planNote").value.trim(),date:$("planDate").value,done:false,createdBy:people[currentPerson].name,createdAt:serverTimestamp()});$("planTitle").value="";$("planNote").value="";$("planDate").value="";toast("Etkinlik eklendi.")});
+    $("plansList").addEventListener("click",async event=>{const check=event.target.closest("[data-plan-check]");const del=event.target.closest("[data-plan-delete]");if(check)await updateDoc(doc(db,"plans",check.dataset.planCheck),{done:check.checked});if(del)await deleteDoc(doc(db,"plans",del.dataset.planDelete))});
+    $("photoInput").addEventListener("change",async event=>{const files=[...event.target.files].filter(file=>file.type.startsWith("image/"));for(const file of files){const url=await compressImage(file);await addDoc(collection(db,"photos"),{url,caption:"Bizden",uploadedBy:people[currentPerson].name,createdAt:serverTimestamp()})}event.target.value="";toast("Fotograflar yuklendi.")});
+    $("addMemoryBtn").addEventListener("click",async()=>{const text=$("memoryText").value.trim();const title=$("memoryTitle").value.trim();if(!text&&!title)return toast("Ani icin bir sey yaz.");const file=$("memoryPhotoInput").files[0];const photo=file?await compressImage(file,820,.64):"";await addDoc(collection(db,"memories"),{title:title||"Bizden bir ani",text,date:$("memoryDate").value||todayStr(),photo,from:people[currentPerson].name,createdAt:serverTimestamp()});$("memoryTitle").value="";$("memoryText").value="";$("memoryDate").value="";$("memoryPhotoInput").value="";toast("Ani kaydedildi.")});
+    $("addLetterBtn").addEventListener("click",async()=>{const title=$("letterTitle").value.trim();const text=$("letterText").value.trim();const openDate=$("letterOpenDate").value;if(!title||!text||!openDate)return toast("Baslik, tarih ve mektup lazim.");await addDoc(collection(db,"letters"),{title,text,openDate,from:people[currentPerson].name,createdAt:serverTimestamp()});$("letterTitle").value="";$("letterText").value="";$("letterOpenDate").value="";toast("Mektup kilitlendi.")});
+    $("todoTabs").addEventListener("click",event=>{const btn=event.target.closest("[data-todo-tab]");if(!btn)return;currentTodoCat=btn.dataset.todoTab;renderTodoTabs();renderTodos()});
+    $("addTodoBtn").addEventListener("click",async()=>{const title=$("todoTitle").value.trim();if(!title)return toast("Listeye ne ekleyelim?");await addDoc(collection(db,"todos"),{category:$("todoCategory").value,title,note:$("todoNote").value.trim(),done:false,from:people[currentPerson].name,createdAt:serverTimestamp()});$("todoTitle").value="";$("todoNote").value="";toast("Listeye eklendi.")});
+    $("todosList").addEventListener("click",async event=>{const check=event.target.closest("[data-todo-check]");const del=event.target.closest("[data-todo-delete]");if(check)await updateDoc(doc(db,"todos",check.dataset.todoCheck),{done:check.checked});if(del)await deleteDoc(doc(db,"todos",del.dataset.todoDelete))});
+    $("addCountdownBtn").addEventListener("click",async()=>{const title=$("countdownTitle").value.trim();const date=$("countdownDate").value;if(!title||!date)return toast("Sayac icin baslik ve tarih lazim.");await addDoc(collection(db,"countdowns"),{title,date,from:people[currentPerson].name,createdAt:serverTimestamp()});$("countdownTitle").value="";$("countdownDate").value="";toast("Sayac eklendi.")});
+    $("countdownsList").addEventListener("click",async event=>{const del=event.target.closest("[data-countdown-delete]");if(del)await deleteDoc(doc(db,"countdowns",del.dataset.countdownDelete))});
+    async function sendSiteMessage(){const text=$("messageText").value.trim();if(!text)return toast("Mesaj bos olmasin.");await addDoc(collection(db,"messages"),{text,from:people[currentPerson].name,createdAt:serverTimestamp()});$("messageText").value="";toast("Mesaj siteye dustu.");return text}
+    $("sendMessageBtn").addEventListener("click",sendSiteMessage);$("whatsappBtn").addEventListener("click",async()=>{const text=$("messageText").value.trim()||"Seni cok seviyorum.";if($("messageText").value.trim())await sendSiteMessage();window.open(`https://wa.me/${elifPhone}?text=${encodeURIComponent(text)}`,"_blank")});
+    $("gallery").addEventListener("click",event=>{const btn=event.target.closest(".photo");if(!btn)return;$("lightboxImg").src=btn.dataset.src;$("lightbox").classList.add("open")});$("memoriesList").addEventListener("click",event=>{const img=event.target.closest("img");if(!img)return;$("lightboxImg").src=img.src;$("lightbox").classList.add("open")});$("lightbox").addEventListener("click",()=>$("lightbox").classList.remove("open"));document.addEventListener("keydown",event=>{if(event.key==="Escape")$("lightbox").classList.remove("open")});
+    const song=$("song");$("musicBtn").addEventListener("click",async()=>{if(song.paused)playSong();else{song.pause();$("musicBtn").textContent="▶"}});
+    $("confettiBtn").addEventListener("click",()=>{for(let i=0;i<34;i++){const s=document.createElement("span");s.textContent=["♥","*","+","x"][Math.floor(Math.random()*4)];s.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-24px;z-index:50;font-size:${16+Math.random()*22}px;transition:transform 1.4s linear, opacity 1.4s linear;pointer-events:none;color:${["#ff8bbd","#ffd36a","#9ddcff","#fff"][Math.floor(Math.random()*4)]}`;document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform=`translateY(${110+Math.random()*24}vh) rotate(${Math.random()*420}deg)`;s.style.opacity="0"});setTimeout(()=>s.remove(),1500)}})
   </script>
 </body>
 </html>
